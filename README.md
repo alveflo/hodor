@@ -1,7 +1,7 @@
 Hodor!
 ======
 
-Minimalistic, simple and easy to use client routing provider that relies on jQuery.
+Minimalistic, simple and easy to use client routing provider.
 
 #### Usage
 ```html
