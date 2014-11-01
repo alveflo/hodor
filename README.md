@@ -1,7 +1,7 @@
 Hodor!
 ======
 
-Minimalistic, simple and easy to use client routing provider.
+Minimalistic, simple and easy to use client side routing provider.
 
 #### Usage
 ```html
