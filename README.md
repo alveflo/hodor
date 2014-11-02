@@ -35,7 +35,6 @@ Views are generated into a div with attribute `data-hodor`.
 		<a href="#">Home</a>
 		<a href="#about">About</a>
 		<a href="#contact">Contact</a>
-		<a href="#something">Elsewhere</a>
 		<div data-hodor></div>
 
 		<script>
