@@ -10,8 +10,10 @@ Minimalistic, simple and easy to use client side routing provider.
 ###### Note
 This library utilizes ajax to load referred html pages. So in order to run this library you'll need to be backed up with a web server.
 #### API
-The only available function is `hodor.use(path, file)` and is used to map a path against a file (see example below)
-Views are generated into a div with attribute `data-hodor`.
+* `hodor.use(templateEngine)` specify a template engine.
+* `hodor.use(path, file)` maps a path against a file
+* `hodor.use(path, file, settings)` maps a path against a file and injects settings (used when templating)
+* A div with attribute `data-hodor` is needed. This is where the views are injected!
 
 #### Dependencies
 * [jQuery](http://jquery.com/)
@@ -22,6 +24,22 @@ Views are generated into a div with attribute `data-hodor`.
   app.use('/', 'main.htm');
   app.use('/about', 'about.htm');
   app.use('/contact', 'contact.htm');
+```
+
+#### Templating
+hodor is supporting templating using [{{Mustache}}](https://github.com/janl/mustache.js) as template engine.
+##### Setup with Mustache
+```javascript
+  var settings = {
+    Foo: 'Foo',
+    Bar: 'Bar',
+  };
+
+  var app = new hodor();
+  app.use(Mustache);
+  app.use('/', 'main.html', settings);
+  app.use('/about', 'about.html', settings);
+  app.use('/contact', 'contact.html');
 ```
 
 #### Full example
