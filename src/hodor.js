@@ -18,14 +18,24 @@ hodor.prototype = {
 		this.dictionary = {};
 		window.location.href = '#';
 	},
-	use: function(path, page) {
+	use: function(path, page, settings) {
+		if (page == null && settings == null)
+		{
+			if (path instanceof Object)
+				this.templateEngine = path;
+			return;
+		}
+
 		var obj = this;
 		$.get(page, function(data) {
-			obj.dictionary[path] = data;
-			$('a[cr-href="' + path + '"]').click(function() {
-				e.preventDefault();
-				$('#hodor').html(data);
-			});
+
+			if (settings != null && obj.templateEngine != null) {
+				obj.dictionary[path] = obj.templateEngine.render(data, settings);
+			}
+			else
+				obj.dictionary[path] = data;
+
+
 			var urlPath = path;
 			var currentPath = obj.getPath();
 			if (urlPath == currentPath)
