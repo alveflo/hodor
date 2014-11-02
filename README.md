@@ -1,4 +1,4 @@
-Hodor!
+hodor.js
 ======
 
 Minimalistic, simple and easy to use client side routing provider.
@@ -7,6 +7,8 @@ Minimalistic, simple and easy to use client side routing provider.
 ```html
 <script src="https://cdn.rawgit.com/victorzki/hodor/master/dist/hodor-min-0.0.1.js"></script>
 ```
+###### Note
+This library utilizes ajax to load referred html pages. So in order to run this library you'll need to be backed up with a web server.
 #### API
 The only available function is `hodor.use(path, file)` and is used to map a path against a file (see example below)
 Views are generated into a div with attribute `data-hodor`.
