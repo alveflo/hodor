@@ -26,9 +26,8 @@ This library utilizes ajax to load referred html pages. So in order to run this 
   app.use('/contact', 'contact.htm');
 ```
 
-#### Templating
+#### Setup with templating engine
 hodor is supporting templating using [{{Mustache}}](https://github.com/janl/mustache.js) as template engine.
-##### Setup with Mustache
 ```javascript
   var settings = {
     Foo: 'Foo',
