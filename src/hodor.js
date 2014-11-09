@@ -8,9 +8,9 @@ function hodor() {
 	this.init();
 	this.storedHash = window.location.hash;
 	var obj = this;
-	window.setInterval(function() {
-		obj.routeController(window.location.hash);
-	}, 100);
+	window.onhashchange = function() { 
+		obj.routeController(); 
+	}
 }
 
 hodor.prototype = {
@@ -42,12 +42,9 @@ hodor.prototype = {
 				obj.setContent(currentPath);
 		});
 	},
-	routeController: function(hash) {
-		if (this.storedHash != hash) {
-			this.storedHash = hash;
-			var path = this.getPath();
-			this.setContent(path);
-		}
+	routeController: function() {
+		var path = this.getPath();
+		this.setContent(path);
 	},
 	setContent: function(path) {
 		var content = "";
